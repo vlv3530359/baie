@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/client")
 public class ConfigClientController {
-    @Value("${spring.kafka.consumer.group-id}")
+    @Value("${test.mo}")
     private String testValue;
 
     @GetMapping("test")

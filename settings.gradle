@@ -1,0 +1,13 @@
+rootProject.name = 'studio'
+include 'product'
+include 'user'
+include 'search'
+include 'eureka-server'
+include 'gateway'
+include 'zipkin'
+include 'message'
+include 'starter'
+include 'other'
+include 'session-server'
+include 'config-server'
+

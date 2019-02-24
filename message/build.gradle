@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.baie'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    //Specify the local path, so that the dependencies can use the local jar
+    flatDir {  dirs '/Users/vlv/Documents/e_workspace/starter/build/libs' }
+}
+
+dependencies {
+    implementation 'org.apache.kafka:kafka-streams'
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    //Use the local starter jar with above local path
+    implementation 'com.baie.starter:country-spring-boot-starter-1.0-SNAPSHOT'
+
+    implementation 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+    testImplementation 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+}

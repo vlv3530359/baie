@@ -11,7 +11,7 @@ public class ConfigClientController {
     @Value("${test.mo}")
     private String testValue;
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public String getTestValue() {
         return testValue;
     }

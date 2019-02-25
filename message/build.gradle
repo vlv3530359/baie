@@ -24,6 +24,10 @@ repositories {
     flatDir {  dirs '/Users/vlv/Documents/e_workspace/starter/build/libs' }
 }
 
+ext {
+    set('springCloudVersion', 'Greenwich.RELEASE')
+}
+
 dependencies {
     implementation 'org.apache.kafka:kafka-streams'
     implementation 'org.springframework.kafka:spring-kafka'
@@ -33,9 +37,15 @@ dependencies {
 
     implementation 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
     testImplementation 'org.projectlombok:lombok'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

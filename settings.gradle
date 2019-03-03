@@ -10,4 +10,5 @@ include 'starter'
 include 'other'
 include 'session-server'
 include 'config-server'
+include 'config-client'
 

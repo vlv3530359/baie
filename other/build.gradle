@@ -1,27 +1,13 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.2.RELEASE'
-    id 'java'
-}
-
-apply plugin: 'io.spring.dependency-management'
-
-group = 'com.baie'
+group = 'com.baie.other'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
-    implementation 'org.projectlombok:lombok'
+    compile libs.springboot.base
+    compile libs.springboot.web
+    compile libs.base
+    implementation libs.redis
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.session:spring-session-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.retry:spring-retry'
-    implementation 'org.springframework:spring-aspects'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompile libs.test.base
+    testRuntime libs.test.engine
 
 }

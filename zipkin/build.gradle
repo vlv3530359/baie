@@ -1,11 +1,5 @@
-plugins {
-    id 'java'
-}
-
-group 'com.baie'
+group 'com.baie.zipkin'
 version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()

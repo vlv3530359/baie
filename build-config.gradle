@@ -1,0 +1,109 @@
+ext {
+	set('springCloudVersion', 'Greenwich.RELEASE')
+    rootname="baie"
+    libs = [
+		base : [
+			"org.projectlombok:lombok"
+		],
+        springboot : [
+                base : [
+                        "org.springframework.boot:spring-boot-starter"
+                ],
+				web : [
+				   "org.springframework.boot:spring-boot-starter-web"
+				],
+				webFlux : [
+					"org.springframework.boot:spring-boot-starter-webflux"
+				],
+                security : [
+                        "org.springframework.boot:spring-boot-starter-security"
+                ],
+                retry : [
+                        "org.springframework.retry:spring-retry"
+                ]
+        ],
+        springcloud : [
+				"org.springframework.cloud:spring-cloud-starter-config",
+				"org.springframework.cloud:spring-cloud-starter-netflix-eureka-server",
+				"org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+
+        ],
+		kafka: [
+				"org.apache.kafka:kafka-streams",
+				"org.springframework.kafka:spring-kafka"
+		],
+		elasticsearch: [
+				"org.springframework.boot:spring-boot-starter-data-elasticsearch"
+		],
+		redis: [
+				"org.springframework.session:spring-session-data-redis",
+				"implementation 'org.springframework.boot:spring-boot-starter-data-redis",
+				"org.springframework.retry:spring-retry",
+				"org.springframework:spring-aspects"
+		],
+		starter: [
+				"org.springframework.boot:spring-boot-autoconfigure",
+				"org.springframework.boot:spring-boot-configuration-processor"
+		],
+		turbine	:[
+				"org.springframework.cloud:spring-cloud-starter-netflix-turbine"
+		],
+		sleuthZipkin: [
+				"org.springframework.cloud:spring-cloud-sleuth-zipkin"
+		],
+        springzuul : [
+        		"org.springframework.cloud:spring-cloud-starter-netflix-zuul"
+        ],
+        springzuulratelimit : [
+        		"com.marcosbarbero.cloud:spring-cloud-zuul-ratelimit:2.0.2.RELEASE"
+        ],
+		springcloudConfigServer : [
+				"org.springframework.cloud:spring-cloud-config-server"
+		],
+		springcloudstream: [
+				"org.springframework.cloud:spring-cloud-stream",
+				"org.springframework.cloud:spring-cloud-starter-stream-kafka",
+				"org.springframework.cloud:spring-cloud-stream-binder-kafka"
+
+		],
+		zipkin      :[
+				"io.zipkin.java:zipkin-server:2.9.4",
+				"io.zipkin.java:zipkin-autoconfigure-ui:2.9.4"
+		],
+        utils 		:[
+				"org.apache.commons:commons-lang3",
+				"org.springframework.boot:spring-boot-devtools",
+				"commons-beanutils:commons-beanutils:1.9.3"
+        ],
+		annotationProcessor			: [
+				"org.projectlombok:lombok"
+		],
+		database	: [
+				mongodb : [
+						"org.springframework.boot:spring-boot-starter-data-mongodb"
+				],
+				jpa : [
+						"org.springframework.boot:spring-boot-starter-data-jpa"
+				]
+		],
+        test       : [
+                base : [
+                        "org.junit.jupiter:junit-jupiter-api",
+                        "org.springframework.boot:spring-boot-starter-test",
+                        "io.projectreactor:reactor-test",
+						"org.projectlombok:lombok"
+                ],
+                cloud  : [
+                        "org.springframework.boot:spring-boot-starter-test",
+                        "org.springframework.cloud:spring-cloud-stream-test-support"
+                ],
+                engine  :[
+                        "org.junit.jupiter:junit-jupiter-engine"
+                ],
+				kafka   :[
+				        "org.springframework.kafka:spring-kafka-test"
+				]
+        ]
+
+    ]
+}

@@ -1,21 +1,14 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.2.RELEASE'
-    id 'java'
-}
-
-apply plugin: 'io.spring.dependency-management'
-
-group = 'com.baie'
+group = 'com.baie.sessionserver'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.session:spring-session-data-redis'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation libs.redis
+    implementation libs.springboot.web
+    implementation libs.springboot.base
+}
+jar {
+    enabled = true
+}
+bootJar {
+    enabled = false
 }

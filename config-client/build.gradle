@@ -2,16 +2,13 @@ dependencies {
     compile libs.springboot.base
     compile libs.springboot.web
     compile libs.springcloud
-    compile libs.kafka
-    compile libs.base
 
-    implementation 'com.baie.starter:country-spring-boot-starter-1.0-SNAPSHOT'
 
     testCompile libs.test.base
     testRuntime libs.test.engine
 }
 
-group = 'com.baie.message'
+group = 'com.baie.configclient'
 version = '0.0.1-SNAPSHOT'
 
 jar {
@@ -20,6 +17,3 @@ jar {
 bootJar {
     enabled = false
 }
-
-
-

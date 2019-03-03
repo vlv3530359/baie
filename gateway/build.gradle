@@ -1,16 +1,19 @@
-plugins {
-    id 'java'
-}
-
-group 'com.baie'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile libs.springboot.base
+    compile libs.springboot.web
+    compile libs.springcloud
+
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
+}
+
+group = 'com.baie.gateway'
+version = '0.0.1-SNAPSHOT'
+
+jar {
+    enabled = true
+}
+bootJar {
+    enabled = false
 }

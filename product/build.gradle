@@ -7,6 +7,10 @@ dependencies {
     compile libs.springcloud
     compile libs.base
     compile libs.database.jpa
+    runtime("com.h2database:h2")
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
 }
 
 

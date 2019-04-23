@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    config:
+      label: 1003
+      profile: dev
+      url: http://localhost:8888/
+    gateway:
+      routes:
+      - id: apiproduct
+        # 重点！/info必须使用http进行转发，lb代表从注册中心获取服务
+        uri: lb://product
+        predicates:
+        # 重点！转发该路径！,/userapi/**,
+        - Path=/apiproduct/**
+        # http://localhost:6601/userapi/user/users/2, 必须加上StripPrefix=1，否则访问服务时会带上userapi
+        #而不是我们期望的去掉userapi，只保留**部分
+        filters:
+        - StripPrefix=1
+        # 限流
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+            key-resolver: '#{@hostAddrKeyResolver}'
+        # For hystrix
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
+          # JWT
+        - JWTFilter=RSA256,HS256
+        - RemoveResponseHeader=X-Powered-By
+
+
+server:
+  port: 8880
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8881/eureka/
+
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8882/uaa/oauth/token #令牌端点
+      user-authorization-uri: http://localhost:8882/uaa/oauth/authorize #授权端点
+      client-id: gateway_server #OAuth2客户端ID
+      client-secret: secret #OAuth2客户端密钥
+    resource:
+      jwt:
+        key-value: jwt_pwd
+
+
+hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 5000

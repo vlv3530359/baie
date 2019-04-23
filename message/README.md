@@ -17,7 +17,7 @@
    
 5. Test Kafka Message
    5.1 http://localhost:8080/kafka/stream/start
-   5.2 http://localhost:8080/kafka/batchsend
+   5.2 http://localhost:8080/kafka/batchsend  post
    
 6. Kafka Message
    6.1 Define the Producer

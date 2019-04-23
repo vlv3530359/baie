@@ -6,6 +6,10 @@ dependencies {
     implementation libs.springboot.base
     implementation libs.springboot.web
     compile libs.springcloud
+    compile libs.base
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
 }
 
 jar {

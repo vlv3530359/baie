@@ -11,4 +11,5 @@ include 'other'
 include 'session-server'
 include 'config-server'
 include 'config-client'
+include 'oauth-server'
 

@@ -1,0 +1,24 @@
+group = 'com.baie.oauth'
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    compile libs.springboot.base
+    compile libs.springboot.web
+    compile libs.springboot.security
+    compile libs.springcloud
+    compile libs.auth
+    compile libs.base
+    compile libs.database.jpa
+    runtime("com.h2database:h2")
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
+}
+
+
+jar {
+    enabled = true
+}
+bootJar {
+    enabled = false
+}

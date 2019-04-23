@@ -1,8 +1,8 @@
 dependencies {
+    compile libs.kafka
     compile libs.springboot.base
     compile libs.springboot.web
     compile libs.springcloud
-    compile libs.kafka
     compile libs.base
 
     implementation 'com.baie.starter:country-spring-boot-starter-1.0-SNAPSHOT'

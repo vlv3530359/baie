@@ -1,18 +1,26 @@
 package com.baie.product.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "DCS_PRODUCT")
-public class Product {
+@Table(name = "PRODUCT")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Product extends BaseEntity implements Serializable {
     @Id
     @Column(name = "PRODUCT_ID")
-    private String                    productId;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "CREATION_DATE")
-    private Date creationDate;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long                    productId;
 
     @Column(name = "DISPLAY_NAME")
     private String                    displayName;
@@ -21,9 +29,13 @@ public class Product {
     @Column(name = "LONG_DESCRIPTION")
     private String                    longDescription;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(table = "FBL_PRODUCT", name = "LAST_MOD_DATE")
-    private Date                      lastModifiedDate;
+    @Column(name = "CATEGORY_ID")
+    private String                    categoryId;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "id")
+    private List<Sku>                 skus;
+
+
 
 
 

@@ -2,6 +2,7 @@ dependencies {
     compile libs.springboot.base
     compile libs.springboot.web
     compile libs.springcloud
+    compile libs.eurekaserver
 
 
     testCompile libs.test.base

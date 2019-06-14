@@ -1,0 +1,17 @@
+group = 'com.baie.core'
+version = '0.0.1-SNAPSHOT'
+
+dependencies {
+    implementation libs.elasticsearch
+    compile libs.springboot.base
+    compile libs.springboot.web
+    compile libs.springcloud
+    compile libs.base
+    compile libs.database.jpa
+    runtime("com.h2database:h2")
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
+}
+
+

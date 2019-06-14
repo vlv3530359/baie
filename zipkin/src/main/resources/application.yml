@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: zipkin-server
+  cloud:
+    config:
+      label: 1003
+      profile: dev
+      url: http://localhost:8888/
+  main:
+    allow-bean-definition-overriding: true # 当bean重复定义时允许相同key情况下beanDefinition实例的覆盖
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false # to fix error: Prometheus requires that all meters with the same name have the same set of tag keys
+
+
+server:
+  port: 9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8881/eureka/
+
+

@@ -1,10 +1,24 @@
-group 'com.baie.zipkin'
-version '1.0-SNAPSHOT'
+dependencies {
+    compile libs.springboot.base
+    compile libs.springcloud
+    compile libs.base
+    compile libs.zipkin
+    
+    //compile libs.springboot.security
+    //compile libs.auth
 
-repositories {
-    mavenCentral()
+
+
+    testCompile libs.test.base
+    testRuntime libs.test.engine
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+group = 'com.baie.zipkin'
+version = '0.0.1-SNAPSHOT'
+
+jar {
+    enabled = true
+}
+bootJar {
+    enabled = false
 }

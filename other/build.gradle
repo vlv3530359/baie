@@ -5,7 +5,7 @@ dependencies {
     compile libs.springboot.base
     compile libs.springboot.web
     compile libs.base
-    implementation libs.redis
+    compile libs.redis
 
     testCompile libs.test.base
     testRuntime libs.test.engine

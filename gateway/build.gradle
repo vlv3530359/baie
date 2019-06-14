@@ -1,12 +1,12 @@
 dependencies {
     compile libs.springboot.base
-    compile libs.springboot.webFlux
     compile libs.springcloud
     compile libs.gateway
     compile libs.hystrix
     compile libs.base
-    compile libs.springboot.security
-    compile libs.auth
+    //compile libs.springboot.security
+    //compile libs.auth
+
 
 
     testCompile libs.test.base

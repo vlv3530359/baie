@@ -24,7 +24,8 @@ ext {
         ],
         springcloud : [
 				"org.springframework.cloud:spring-cloud-starter-config",
-				"org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+				"org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+				"org.springframework.cloud:spring-cloud-starter-openfeign"
 
         ],
 		hystrix : [
@@ -51,7 +52,7 @@ ext {
 		],
 		redis: [
 				"org.springframework.session:spring-session-data-redis",
-				"implementation 'org.springframework.boot:spring-boot-starter-data-redis",
+				"org.springframework.boot:spring-boot-starter-data-redis",
 				"org.springframework.retry:spring-retry",
 				"org.springframework:spring-aspects"
 		],
@@ -84,6 +85,9 @@ ext {
 				"io.zipkin.java:zipkin-server:2.9.4",
 				"io.zipkin.java:zipkin-autoconfigure-ui:2.9.4"
 		],
+        zipkinClient :[
+                "org.springframework.cloud:spring-cloud-starter-zipkin"
+        ],
         utils 		:[
 				"org.apache.commons:commons-lang3",
 				"org.springframework.boot:spring-boot-devtools",
@@ -98,6 +102,9 @@ ext {
 				],
 				jpa : [
 						"org.springframework.boot:spring-boot-starter-data-jpa"
+				],
+				mysql :[
+						"mysql:mysql-connector-java"
 				]
 		],
         test       : [

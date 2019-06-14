@@ -13,3 +13,9 @@
     npm run start
 
 2. Run test case
+
+issues:
+1. ElasticSearch ClusterBlockException[blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];
+   
+http://127.0.0.1:9200/_all/_settings/  put
+{"index.blocks.read_only_allow_delete": null}

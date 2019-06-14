@@ -9,7 +9,7 @@ buildscript {
 }
 plugins {
     id "org.springframework.boot" version "2.1.3.RELEASE"
-    id 'java'
+    //id 'java' will bring an error when run gradle clean bootJar, "Main class name has not been configured and it could not be resolved"
 }
 
 allprojects {
@@ -33,6 +33,8 @@ allprojects {
 
 apply from: "$rootDir/build-config.gradle"
 
+
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
@@ -52,3 +54,64 @@ subprojects {
     }
 }
 
+project(':core') {
+    jar {
+        enabled = true
+    }
+    bootJar {
+        enabled = false
+    }
+}
+
+
+project(':product') {
+
+    dependencies{
+        compile project(':core')
+    }
+    jar {
+        enabled = true
+    }
+    bootJar {
+        enabled = false
+    }
+}
+
+project(':user') {
+
+    dependencies{
+        compile project(':core')
+    }
+    jar {
+        enabled = true
+    }
+    bootJar {
+        enabled = false
+    }
+}
+
+project(':message') {
+
+    dependencies{
+        compile project(':core')
+    }
+    jar {
+        enabled = true
+    }
+    bootJar {
+        enabled = false
+    }
+}
+
+project(':search') {
+
+    dependencies{
+        compile project(':core')
+    }
+    jar {
+        enabled = true
+    }
+    bootJar {
+        enabled = false
+    }
+}

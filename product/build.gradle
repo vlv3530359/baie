@@ -7,16 +7,11 @@ dependencies {
     compile libs.springcloud
     compile libs.base
     compile libs.database.jpa
+    compile libs.database.mysql
+    compile libs.zipkinClient
     runtime("com.h2database:h2")
 
     testCompile libs.test.base
     testRuntime libs.test.engine
 }
 
-
-jar {
-    enabled = true
-}
-bootJar {
-    enabled = false
-}

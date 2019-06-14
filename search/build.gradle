@@ -7,7 +7,7 @@ dependencies {
     implementation libs.springboot.web
     compile libs.springcloud
     compile libs.base
-
+    compile libs.zipkinClient
     testCompile libs.test.base
     testRuntime libs.test.engine
 }

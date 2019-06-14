@@ -4,7 +4,7 @@ dependencies {
     compile libs.springboot.web
     compile libs.springcloud
     compile libs.base
-
+    compile libs.zipkinClient
     implementation 'com.baie.starter:country-spring-boot-starter-1.0-SNAPSHOT'
 
     testCompile libs.test.base
@@ -14,12 +14,7 @@ dependencies {
 group = 'com.baie.message'
 version = '0.0.1-SNAPSHOT'
 
-jar {
-    enabled = true
-}
-bootJar {
-    enabled = false
-}
+
 
 
 

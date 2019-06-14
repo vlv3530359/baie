@@ -5,6 +5,8 @@ dependencies {
     compile libs.springcloud
     compile libs.base
     compile libs.zipkinClient
+    compile libs.springboot.actuator
+    compile libs.bus
     implementation 'com.baie.starter:country-spring-boot-starter-1.0-SNAPSHOT'
 
     testCompile libs.test.base

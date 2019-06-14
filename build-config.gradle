@@ -20,7 +20,10 @@ ext {
                 ],
                 retry : [
                         "org.springframework.retry:spring-retry"
-                ]
+                ],
+				actuator : [
+						"org.springframework.boot:spring-boot-starter-actuator"
+				]
         ],
         springcloud : [
 				"org.springframework.cloud:spring-cloud-starter-config",
@@ -95,6 +98,10 @@ ext {
         ],
 		annotationProcessor			: [
 				"org.projectlombok:lombok"
+		],
+		bus 		:[
+				"org.springframework.cloud:spring-cloud-starter-bus-kafka:2.0.0.RELEASE",
+				"org.springframework.cloud:spring-cloud-bus:2.0.0.RELEASE"
 		],
 		database	: [
 				mongodb : [

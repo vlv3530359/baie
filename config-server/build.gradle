@@ -2,7 +2,8 @@ dependencies {
     compile libs.springboot.base
     compile libs.springboot.web
     compile libs.springcloudConfigServer
-
+    compile libs.springboot.actuator
+    compile libs.bus
 
     testCompile libs.test.base
     testRuntime libs.test.engine

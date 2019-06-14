@@ -38,3 +38,6 @@ dependencyManagement {
 #spring.cloud.config.label=1002  default is master
 #spring.cloud.config.profile=dev  if there is no file like message-dev.properties will ready the message.properties
 spring.cloud.config.uri=http://localhost:8888/
+
+
+Spring Cloud Config + Spring Cloud Bus + kafka
